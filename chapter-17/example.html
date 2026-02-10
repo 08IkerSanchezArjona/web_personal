@@ -73,23 +73,25 @@
 			section.Contacto {
 				float: left;
 				/*Este atributo hace que el elemento se coloque al lado de otros elementos flotantes, en lugar de debajo de ellos.*/
-				width: 659px;
+				width: 300px;
 				border-right: 1px solid #eeeeee;
-				margin-left: 2em;}
+				margin: 2em 2em 2em 2em;
+				
+				}
 				
 			article {
 				clear: both;
 				/*Este atributo hace que el elemento no se coloque al lado de otros elementos flotantes, sino debajo de ellos.*/
-				overflow: auto;
 				/*Este atributo se utiliza para controlar cómo se maneja el contenido que se desborda del elemento.
-				 En este caso, "auto" significa que se agregarán barras de desplazamiento si el contenido excede el tamaño del elemento.*/
-				width: 100%;}
+				En este caso, "auto" significa que se agregarán barras de desplazamiento si el contenido excede el tamaño del elemento.*/
+				width: 100%;
+				margin-top: 1.5em;
+			}
 			hgroup {
-				margin-top: 40px;}
+				margin-top: -10px;}
 			figure {
 				float: left;
 				width: 290px;
-				height: 220px;
 				padding: 5px;
 				margin: 20px;
 				}
@@ -97,7 +99,7 @@
 				font-size: 90%;
 				text-align: left;}
 			aside {
-				width: 230px;
+				width: auto;
 				float: left;
 				padding: 0px 0px 0px 20px;}
 			aside section a {
@@ -110,7 +112,7 @@
 				color: #985d6a;
 				background-color: #efefef;}
 			a {
-				color: #de6581;
+				color: #656ee2;
 				text-decoration: none;
 			/*Este atributo elimina el subrayado de los enlaces*/}
 			h1, h2, h3 {
@@ -120,10 +122,10 @@
 				padding: 0px;}
 			h3 {
 				margin: 0px 0px 10px 0px;
-				color: #de6581;}
+				color: #1a1214;}
 			aside h2 {
 				padding: 30px 0px 10px 0px;
-				color: #de6581;}
+				color: #656ee2;}
 			footer {
 				font-size: 80%;
 				padding: 7px 0px 0px 20px;}
@@ -150,7 +152,18 @@
 				vertical-align: middle;}
 			.linkedin-des {
 				display: inline-block;}
+			p {
+				width: 550px;
+				text-align: justify;
+			}
+			li{
+				margin-right: 5px;
+				margin-top: 10px;
+			}
 
+			footer p {
+				margin: 10px 10px 10px 10px;
+			}
 		</style>
 		<!--Aquí se ejecuta un script si estas usando Internet Explorer 8 o inferior para poder visualizar elementos HTML5-->
 		<!--[if lt IE 9]>
@@ -190,36 +203,43 @@
 					</figure>
 				</article>    
 				<article>
-					<figure>
-						<img src="images/teriyaki.jpg" alt="Teriyaki sauce" />
-						<figcaption>Teriyaki Sauce</figcaption>
-					</figure>
 					<hgroup>
-						<h2>Sauces Masterclass</h2>
-						<h3>One day workshop</h3>
+						<h2>Estudios: </h2>
 					</hgroup>
-					<p>An intensive one-day course looking at how to create the most delicious sauces for use in a range of Japanese cookery.</p>
+					<ul>
+						<strong><li>Grado en Sistemas Microinformáticos y Redes (2024-2026)</li>
+						<li>Instituto de Educación Secundaria "IES. Sierra de Mijas" (2020-2024)</li></strong>
+				</article>
+				<article>
+					<hgroup>
+						<h2>Idiomas: </h2>
+					</hgroup>
+					<ul>
+						<strong><li>Español (Nativo)</li>
+						<li>Inglés (Intermedio)</li></strong>
+					</ul>
 				</article>    
 			</section>
 			<aside>
 				<!--La etiqueta aside define un contenido secundario o complementario al contenido principal del sitio web o un menú lateral-->
-				<section class="popular-recipes">
-					<h2>Popular Recipes</h2>
-					<a href="">Yakitori (grilled chicken)</a>
-					<a href="">Tsukune (minced chicken patties)</a>
-					<a href="">Okonomiyaki (savory pancakes)</a>
-					<a href="">Mizutaki (chicken stew)</a>
+				<section class="Acerca-de-mi">
+					<h2>Acerca de mi: </h2>
+					<p>Soy un estudiante de Ingeniería Informática con interés en el desarrollo web y la programación.
+						Me apasiona aprender nuevas tecnologías y resolver problemas mediante el uso de herramientas digitales.
+						No tengo mucha experiencia laboral previa, pero estoy motivado a aprender y crecer profesionalmente.
+						Pero quiero seguir aprendiendo y mejorando mis habilidades en el desarrollo web.</p>
 				</section>
-				<section class="contact-details">
-					<h2>Contact</h2>
-					<p>Yoko's Kitchen<br />
-						27 Redchurch Street<br />
-						Shoreditch<br />
-						London E2 7DP</p>
+				<section class="Experiencia-laboral">
+					<h2>Experiencia laboral</h2>
+					<h3>Técnico de IT en prácticas</h3>
+					<h4>Sector Alarm | 5/2/2025 - 4/3/2025</h4>
+					<p>En el tiempo que estuve en Sector Alarm, realicé tareas como ayudar a los demás empleados con problemas técnicos, mantener el inventario de equipos
+					   y realizar pruebas de funcionamiento de los sistemas de seguridad instalados.</p>
 				</section>
 			</aside>
 			<footer>
 				<!--La etiqueta footer define el pie de página del sitio web semántico-->
+				<p>Iker Sánchez Arjona - 2026</p>
 			</footer>
 		</div><!-- .contenido-principal -->
 	</body>
