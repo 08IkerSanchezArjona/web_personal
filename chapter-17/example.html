@@ -1,289 +1,372 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	<!--La etiqueta head sirve para guardar metadatos, ejecutar scripts, etc.-->
-		<title>Curriculum Vitae Iker Sánchez</title>
-		<!--Title sirve para definir el título de la página web que aparece en la pestaña del navegador-->
-		
-		<link rel="icon" href="images/icon.png" type="image/png">
-		
-		
-		<!--Aquí se pueden escribir estilos CSS para la página web-->
-		<style type="text/css"> 
-			
-			header, section, footer, nav, article, figure, figcaption {
-				display: block;}
-				/*El atributo display: block; permite que los elementos HTML5 se muestren correctamente en navegadores antiguos*/
-			html, body {
-				/*Cuando se separan dos elementos con una coma, se aplica el estilo a ambos elementos*/
-				width: 100%;
-				/*El atributo width: 100% hace que el elemento ocupe todo el ancho de la ventana del navegador*/
-				height: 100%;
-				/*El atributo height: 100% hace que el elemento ocupe todo el alto de la ventana del navegador*/
-				margin: 0;
-				/*Este atributo define el margen del body*/
-				padding: 0;
-				/*El atributo padding: 0; elimina el espacio en blanco alrededor del body*/
-			}
-			body {
-				/*Este atributo define el color del texto*/
-				color: #666666;
-				/*Este atributo define el color de fondo oscuro*/
-				background-color: #0a0e27;
-				/*Este atributo define el tipo de fuente*/
-				font-family: Times, serif;
-				/*Este atributo controla el espaciado vertical entre líneas de texto.*/
-				line-height: 1.4em;
-				/*Este atributo define el margen de la página web*/
-				margin: 0px;
-				position: relative;
-			}
-			#canvas-background {
-				/*Canvas background es para el fondo dinámico del sitio web*/
-				position: fixed;
-				/*El atributo position: fixed; hace que el elemento se mantenga en la misma posición incluso cuando se desplaza la página*/
-				top: 0;
-				/*El atributo top: 0; hace que el elemento se coloque en la parte superior de la ventana del navegador*/
-				left: 0;
-				/*El atributo left: 0; hace que el elemento se coloque en la parte izquierda de la ventana del navegador*/
-				width: 100%;
-				height: 100%;
-				z-index: -1;
-				/*El atributo z-index: -1; hace que el elemento se coloque detrás de otros elementos en la página*/
-			}
-			.contenido-principal {
-				/*Cuando en css empieza con un . se refiere a una clase del código*/
-				width: 984px;
-				/*Este atributo define el ancho de la caja contenido-principal*/
-				margin: 20px auto 20px auto;
-				/*Este atributo define el margen de la caja contenido-principal*/
-				border: 2px solid #000000;
-				/*Este atributo define el borde de la caja contenido-principal*/
-				background-color: #ffffff;
-				height: auto;
-				position: relative;
-				z-index: 1;
-			}
-			header {
-				height: 220px;
-				/*Este atributo define el ancho del header*/
-				background-image: url(images/Banner1.png);}
-			h1 {
-				/*Este atributo define el tamaño de la fuente*/
-				text-indent: -9999px;
-				width: 940px;
-				height: 130px;
-				margin: 0px;}
-			nav, footer {
-				/*Cuando se hace referencia a 2 cosas separadas por una coma se aplica el estilo a ambas*/
-				clear: both;
-				/*Este atributo hace que el elemento no se coloque al lado de otros elementos flotantes, sino debajo de ellos.*/
-				color: #ffffff;
-				/*Este atributo define el color de letra del nav y footer*/
-				background-color: #aeaca8;
-				height: 30px;}
-			nav ul {
-				/*Cuando se hace referencia a 2 cosas sin estar separadas por una coma,
-				 se refiere a los elementos hijos de ambos elementos*/
-				margin: 60px;
-				padding: 5px 0px 5px 30px;
-			/*Este atributo define el margen del nav ul*/
-				list-style: none;}
-				/*Este atributo elimina los puntos de las listas*/
-			nav li {
-				display: inline;
-				/*Este atributo hace que los elementos de la lista se muestren en línea, en lugar de en una nueva línea cada uno.*/
-				margin-right: 40px;}
-			nav li a {
-				color: #ffffff;}
-			nav li a:hover, nav li a.current {
-				color: #000000;}
-			section.Contacto {
-				float: left;
-				/*Este atributo hace que el elemento se coloque al lado de otros elementos flotantes, en lugar de debajo de ellos.*/
-				width: 300px;
-				border-right: 1px solid #eeeeee;
-				margin: 2em 2em 2em 2em;
-				
-				}
-				
-			article {
-				clear: both;
-				/*Este atributo hace que el elemento no se coloque al lado de otros elementos flotantes, sino debajo de ellos.*/
-				/*Este atributo se utiliza para controlar cómo se maneja el contenido que se desborda del elemento.
-				En este caso, "auto" significa que se agregarán barras de desplazamiento si el contenido excede el tamaño del elemento.*/
-				width: 100%;
-				margin-top: 1.5em;
-			}
-			hgroup {
-				margin-top: -10px;}
-			figure {
-				float: left;
-				width: 290px;
-				padding: 10px;
-				margin: 20px;
-				margin-top: 1em;
-				margin-bottom: 1em;
-				}
-			figcaption {
-				font-size: 90%;
-				text-align: left;}
-			aside {
-				width: auto;
-				float: left;
-				padding: 0px 0px 0px 20px;}
-			aside section a {
-				display: block;
-				padding: 10px;
-				border-bottom: 1px solid #eeeeee;
-			/*Este atributo define el borde inferior de los enlaces dentro de las secciones del aside*/
-				transition: all 0.3s ease;}
-			aside section a:hover {
-				color: #985d6a;
-				background-color: #efefef;}
-			a {
-				color: #656ee2;
-				text-decoration: none;}
-			/*Este atributo elimina el subrayado de los enlaces*/
-			h1, h2, h3 {
-				font-weight: normal;}
-			h2 {
-				margin: 10px 0px 5px 0px;
-				padding: 0px;}
-			h3 {
-				margin: 0px 0px 10px 0px;
-				color: #1a1214;}
-			aside h2 {
-				padding: 30px 0px 10px 0px;
-				color: #656ee2;}
-			footer {
-				font-size: 80%;
-				padding: 7px 0px 0px 20px;}
-			.telefono {
-				width: 30px;
-				height: 30px;
-				margin-right: 10px;
-				vertical-align: middle;}
-			.telefono-des {
-				display: inline-block;
-				vertical-align: middle;
-			}
-			.correo {
-				width: 30px;
-				height: 30px;
-				margin-right: 10px;
-				vertical-align: middle;}
-			.correo-des {
-				display: inline-block;}
-			.linkedin {
-				width: 30px;
-				height: 30px;
-				margin-right: 10px;
-				vertical-align: middle;}
-			.linkedin-des {
-				display: inline-block;}
-			.github {
-				width: 30px;
-				height: 30px;
-				margin-right: 10px;
-				vertical-align: middle;}
-			.github-des {
-				display: inline-block;}
-			p {
-				width: 550px;
-				text-align: justify;
-			}
-			li{
-				margin-right: 5px;
-				margin-top: 10px;
-			}
 
-			footer p {
-				margin: 10px 10px 10px 10px;
-			}
-		</style>
-		<!--Aquí se ejecuta un script si estas usando Internet Explorer 8 o inferior para poder visualizar elementos HTML5-->
-		<!--[if lt IE 9]>
+<head>
+	<!--La etiqueta head sirve para guardar metadatos, ejecutar scripts, etc.-->
+	<title>Curriculum Vitae Iker Sánchez</title>
+	<!--Title sirve para definir el título de la página web que aparece en la pestaña del navegador-->
+
+	<link rel="icon" href="images/icon.png" type="image/png">
+
+
+	<!--Aquí se pueden escribir estilos CSS para la página web-->
+	<style type="text/css">
+		header,
+		section,
+		footer,
+		nav,
+		article,
+		figure,
+		figcaption {
+			display: block;
+		}
+
+		/*El atributo display: block; permite que los elementos HTML5 se muestren correctamente en navegadores antiguos*/
+		html,
+		body {
+			/*Cuando se separan dos elementos con una coma, se aplica el estilo a ambos elementos*/
+			width: 100%;
+			/*El atributo width: 100% hace que el elemento ocupe todo el ancho de la ventana del navegador*/
+			height: 100%;
+			/*El atributo height: 100% hace que el elemento ocupe todo el alto de la ventana del navegador*/
+			margin: 0;
+			/*Este atributo define el margen del body*/
+			padding: 0;
+			/*El atributo padding: 0; elimina el espacio en blanco alrededor del body*/
+		}
+
+		body {
+			/*Este atributo define el color del texto*/
+			color: #666666;
+			/*Este atributo define el color de fondo oscuro*/
+			background-color: #0a0e27;
+			/*Este atributo define el tipo de fuente*/
+			font-family: Times, serif;
+			/*Este atributo controla el espaciado vertical entre líneas de texto.*/
+			line-height: 1.4em;
+			/*Este atributo define el margen de la página web*/
+			margin: 0px;
+			position: relative;
+		}
+
+		#canvas-background {
+			/*Canvas background es para el fondo dinámico del sitio web*/
+			position: fixed;
+			/*El atributo position: fixed; hace que el elemento se mantenga en la misma posición incluso cuando se desplaza la página*/
+			top: 0;
+			/*El atributo top: 0; hace que el elemento se coloque en la parte superior de la ventana del navegador*/
+			left: 0;
+			/*El atributo left: 0; hace que el elemento se coloque en la parte izquierda de la ventana del navegador*/
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			/*El atributo z-index: -1; hace que el elemento se coloque detrás de otros elementos en la página*/
+		}
+
+		.contenido-principal {
+			/*Cuando en css empieza con un . se refiere a una clase del código*/
+			width: 984px;
+			/*Este atributo define el ancho de la caja contenido-principal*/
+			margin: 20px auto 20px auto;
+			/*Este atributo define el margen de la caja contenido-principal*/
+			border: 2px solid #000000;
+			/*Este atributo define el borde de la caja contenido-principal*/
+			background-color: #ffffff;
+			height: auto;
+			position: relative;
+			z-index: 1;
+		}
+
+		header {
+			height: 220px;
+			/*Este atributo define el ancho del header*/
+			background-image: url(images/Banner1.png);
+		}
+
+		h1 {
+			/*Este atributo define el tamaño de la fuente*/
+			text-indent: -9999px;
+			width: 940px;
+			height: 130px;
+			margin: 0px;
+		}
+
+		nav,
+		footer {
+			/*Cuando se hace referencia a 2 cosas separadas por una coma se aplica el estilo a ambas*/
+			clear: both;
+			/*Este atributo hace que el elemento no se coloque al lado de otros elementos flotantes, sino debajo de ellos.*/
+			color: #ffffff;
+			/*Este atributo define el color de letra del nav y footer*/
+			background-color: #aeaca8;
+			height: 30px;
+		}
+
+		nav ul {
+			/*Cuando se hace referencia a 2 cosas sin estar separadas por una coma,
+				 se refiere a los elementos hijos de ambos elementos*/
+			margin: 60px;
+			padding: 5px 0px 5px 30px;
+			/*Este atributo define el margen del nav ul*/
+			list-style: none;
+		}
+
+		/*Este atributo elimina los puntos de las listas*/
+		nav li {
+			display: inline;
+			/*Este atributo hace que los elementos de la lista se muestren en línea, en lugar de en una nueva línea cada uno.*/
+			margin-right: 40px;
+		}
+
+		nav li a {
+			color: #ffffff;
+		}
+
+		nav li a:hover,
+		nav li a.current {
+			color: #000000;
+		}
+
+		section.Contacto {
+			float: left;
+			/*Este atributo hace que el elemento se coloque al lado de otros elementos flotantes, en lugar de debajo de ellos.*/
+			width: 300px;
+			border-right: 1px solid #eeeeee;
+			margin: 2em 2em 2em 2em;
+
+		}
+
+		article {
+			clear: both;
+			/*Este atributo hace que el elemento no se coloque al lado de otros elementos flotantes, sino debajo de ellos.*/
+			/*Este atributo se utiliza para controlar cómo se maneja el contenido que se desborda del elemento.
+				En este caso, "auto" significa que se agregarán barras de desplazamiento si el contenido excede el tamaño del elemento.*/
+			width: 100%;
+			margin-top: 1.5em;
+		}
+
+		hgroup {
+			margin-top: -10px;
+		}
+
+		figure {
+			float: left;
+			width: 290px;
+			padding: 10px;
+			margin: 20px;
+			margin-top: 1em;
+			margin-bottom: 1em;
+		}
+
+		figcaption {
+			font-size: 90%;
+			text-align: left;
+		}
+
+		aside {
+			width: auto;
+			float: left;
+			padding: 0px 0px 0px 20px;
+		}
+
+		aside section a {
+			display: block;
+			padding: 10px;
+			border-bottom: 1px solid #eeeeee;
+			/*Este atributo define el borde inferior de los enlaces dentro de las secciones del aside*/
+			transition: all 0.3s ease;
+		}
+
+		aside section a:hover {
+			color: #985d6a;
+			background-color: #efefef;
+		}
+
+		a {
+			color: #656ee2;
+			text-decoration: none;
+		}
+
+		/*Este atributo elimina el subrayado de los enlaces*/
+		h1,
+		h2,
+		h3 {
+			font-weight: normal;
+		}
+
+		h2 {
+			margin: 10px 0px 5px 0px;
+			padding: 0px;
+		}
+
+		h3 {
+			margin: 0px 0px 10px 0px;
+			color: #1a1214;
+		}
+
+		aside h2 {
+			padding: 30px 0px 10px 0px;
+			color: #656ee2;
+		}
+
+		footer {
+			font-size: 80%;
+			padding: 7px 0px 0px 20px;
+		}
+
+		.telefono {
+			width: 30px;
+			height: 30px;
+			margin-right: 10px;
+			vertical-align: middle;
+		}
+
+		.telefono-des {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.correo {
+			width: 30px;
+			height: 30px;
+			margin-right: 10px;
+			vertical-align: middle;
+		}
+
+		.correo-des {
+			display: inline-block;
+		}
+
+		.linkedin {
+			width: 30px;
+			height: 30px;
+			margin-right: 10px;
+			vertical-align: middle;
+		}
+
+		.linkedin-des {
+			display: inline-block;
+		}
+
+		.github {
+			width: 30px;
+			height: 30px;
+			margin-right: 10px;
+			vertical-align: middle;
+		}
+
+		.github-des {
+			display: inline-block;
+		}
+
+		p {
+			width: 550px;
+			text-align: justify;
+		}
+
+		li {
+			margin-right: 5px;
+			margin-top: 10px;
+		}
+
+		footer p {
+			margin: 10px 10px 10px 10px;
+		}
+	</style>
+	<!--Aquí se ejecuta un script si estas usando Internet Explorer 8 o inferior para poder visualizar elementos HTML5-->
+	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-	</head>
-	<body>
-		<!--Aquí se abre la etiqueta para poder empezar a maqutar el contenido web-->
-		<canvas id="canvas-background"></canvas>
-		<div class="contenido-principal">
-			<!--Aquí se crea un  contenedor con una clase para poder aplicar estilos a todo el contenido web-->
-			<header>
-				<!--Aquí se define la cabecera semantica del sitio web-->
-				<h1>Curriculum Vitae</h1>
-				<!--La etiqueta h1 sirve para poner un título-->
-				<nav>
-					<!--Con la etiqueta nav se define un menú de navegación pero solo semánticamente-->
-					<ul>
-						<!--La etiqueta ul define una lista sin ordenar, y cada elemento de la lista se define con la etiqueta li-->
-						<li><a href="example.html">Curriculum</a></li>
-						<li><a href="Redes_Sociales.html">Redes sociales</a></li>
-					</ul>
-				</nav>
-			</header>
-			<section class="Contacto">
-				<!--La etiqueta section define una sección del contenido web, y la clase "Contacto" permite aplicar estilos específicos a esta sección-->
-				<article>
-					<hgroup>
-						<h2>Contacto: </h2>
-					</hgroup>
-					<figure>
-						<img class="telefono" src="images/telico.png" alt="Teléfono" />
-						<figcaption class="telefono-des">+34 633 18 81 59</figcaption><br>
-						<img class="correo" src="images/correoico.jpg" alt="correo" />
-						<figcaption class="correo-des">Iker.SanchezArjona08@gmail.com</figcaption>
-						<img class="linkedin" src="images/linkedin.png" alt="linkedin"/>
-						<figcaption class="linkedin-des"><a href="https://www.linkedin.com/in/iker-sanchezarjona-820258352">Iker Sanchez Arjona</a></figcaption><br>
-						<img class="github" src="images/github.png" alt="github"/>
-						<figcaption class="github-des"><a href="https://github.com/08IkerSanchezArjona?tab=overview&from=2026-01-01&to=2026-01-31">08IkerSanchezArjona</a></figcaption>
-					</figure>
-				</article>    
-				<article>
-					<hgroup>
-						<h2>Estudios: </h2>
-					</hgroup>
-					<ul>
-						<strong><li>Grado en Sistemas Microinformáticos y Redes (2024-2026)</li>
-						<li>Instituto de Educación Secundaria "IES. Sierra de Mijas" (2020-2024)</li></strong>
-				</article>
-				<article>
-					<hgroup>
-						<h2>Idiomas: </h2>
-					</hgroup>
-					<ul>
-						<strong><li>Español (Nativo)</li>
-						<li>Inglés (Intermedio)</li></strong>
-					</ul>
-				</article>    
+</head>
+
+<body>
+	<!--Aquí se abre la etiqueta para poder empezar a maqutar el contenido web-->
+	<canvas id="canvas-background"></canvas>
+	<div class="contenido-principal">
+		<!--Aquí se crea un  contenedor con una clase para poder aplicar estilos a todo el contenido web-->
+		<header>
+			<!--Aquí se define la cabecera semantica del sitio web-->
+			<h1>Curriculum Vitae</h1>
+			<!--La etiqueta h1 sirve para poner un título-->
+			<nav>
+				<!--Con la etiqueta nav se define un menú de navegación pero solo semánticamente-->
+				<ul>
+					<!--La etiqueta ul define una lista sin ordenar, y cada elemento de la lista se define con la etiqueta li-->
+					<li><a href="example.html">Curriculum</a></li>
+					<li><a href="Redes_Sociales.html">Redes sociales</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section class="Contacto">
+			<!--La etiqueta section define una sección del contenido web, y la clase "Contacto" permite aplicar estilos específicos a esta sección-->
+			<article>
+				<hgroup>
+					<h2>Contacto: </h2>
+				</hgroup>
+				<figure>
+					<img class="telefono" src="images/telico.png" alt="Teléfono" />
+					<figcaption class="telefono-des">+34 633 18 81 59</figcaption><br>
+					<img class="correo" src="images/correoico.jpg" alt="correo" />
+					<figcaption class="correo-des">Iker.SanchezArjona08@gmail.com</figcaption>
+					<img class="linkedin" src="images/linkedin.png" alt="linkedin" />
+					<figcaption class="linkedin-des"><a
+							href="https://www.linkedin.com/in/iker-sanchezarjona-820258352">Iker Sanchez Arjona</a>
+					</figcaption><br>
+					<img class="github" src="images/github.png" alt="github" />
+					<figcaption class="github-des"><a
+							href="https://github.com/08IkerSanchezArjona?tab=overview&from=2026-01-01&to=2026-01-31">08IkerSanchezArjona</a>
+					</figcaption>
+				</figure>
+			</article>
+			<article>
+				<hgroup>
+					<h2>Estudios: </h2>
+				</hgroup>
+				<ul>
+					<strong>
+						<li>Grado en Sistemas Microinformáticos y Redes (2024-2026)</li>
+						<li>Instituto de Educación Secundaria "IES. Sierra de Mijas" (2020-2024)</li>
+					</strong>
+			</article>
+			<article>
+				<hgroup>
+					<h2>Idiomas: </h2>
+				</hgroup>
+				<ul>
+					<strong>
+						<li>Español (Nativo)</li>
+						<li>Inglés (Intermedio)</li>
+					</strong>
+				</ul>
+			</article>
+		</section>
+		<aside>
+			<!--La etiqueta aside define un contenido secundario o complementario al contenido principal del sitio web o un menú lateral-->
+			<section class="Acerca-de-mi">
+				<h2>Acerca de mi: </h2>
+				<p>Soy un estudiante de Ingeniería Informática con interés en el desarrollo web y la programación.
+					Me apasiona aprender nuevas tecnologías y resolver problemas mediante el uso de herramientas
+					digitales.
+					No tengo mucha experiencia laboral previa, pero estoy motivado a aprender y crecer profesionalmente.
+					Pero quiero seguir aprendiendo y mejorando mis habilidades en el desarrollo web.</p>
 			</section>
-			<aside>
-				<!--La etiqueta aside define un contenido secundario o complementario al contenido principal del sitio web o un menú lateral-->
-				<section class="Acerca-de-mi">
-					<h2>Acerca de mi: </h2>
-					<p>Soy un estudiante de Ingeniería Informática con interés en el desarrollo web y la programación.
-						Me apasiona aprender nuevas tecnologías y resolver problemas mediante el uso de herramientas digitales.
-						No tengo mucha experiencia laboral previa, pero estoy motivado a aprender y crecer profesionalmente.
-						Pero quiero seguir aprendiendo y mejorando mis habilidades en el desarrollo web.</p>
-				</section>
-				<section class="Experiencia-laboral">
-					<h2>Experiencia laboral</h2>
-					<h3>Técnico de IT en prácticas</h3>
-					<h4>Sector Alarm | 5/2/2025 - 4/3/2025</h4>
-					<p>En el tiempo que estuve en Sector Alarm, realicé tareas como ayudar a los demás empleados con problemas técnicos, mantener el inventario de equipos
-					   y realizar pruebas de funcionamiento de los sistemas de seguridad instalados.</p>
-				</section>
-			</aside>
-			<footer>
-				<!--La etiqueta footer define el pie de página del sitio web semántico-->
-				<p>Iker Sánchez Arjona - 2026</p>
-			</footer>
-		</div><!-- .contenido-principal -->
-		
-		<script src="fondo.js"></script>
-		<!--Se ejecuta el script de fondo dinámico del sitio web-->
-	</body>
+			<section class="Experiencia-laboral">
+				<h2>Experiencia laboral</h2>
+				<h3>Técnico de IT en prácticas</h3>
+				<h4>Sector Alarm | 5/2/2025 - 4/3/2025</h4>
+				<p>En el tiempo que estuve en Sector Alarm, realicé tareas como ayudar a los demás empleados con
+					problemas técnicos, mantener el inventario de equipos
+					y realizar pruebas de funcionamiento de los sistemas de seguridad instalados.</p>
+			</section>
+		</aside>
+		<footer>
+			<!--La etiqueta footer define el pie de página del sitio web semántico-->
+			<p>Iker Sánchez Arjona - 2026</p>
+		</footer>
+	</div><!-- .contenido-principal -->
+
+	<script src="fondo.js"></script>
+	<!--Se ejecuta el script de fondo dinámico del sitio web-->
+</body>
+
 </html>
